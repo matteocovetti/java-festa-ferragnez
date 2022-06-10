@@ -30,20 +30,40 @@ public class BonusCheckGuest {
 		nomeInvitato = scan.nextLine();
 		
 		// verifico se utente è tra gli invitati
-		int totaleInvitati = invitati.length;
-		boolean flag = false;
 		
-		for(int i = 0; i < totaleInvitati; i++) {
-			if(nomeInvitato.equalsIgnoreCase(invitati[i])) {
-				System.out.println("Sei tra gli invitati. Puoi entrare!");
+		// ciclo for
+//		int totaleInvitati = invitati.length;
+//		boolean flag = false;
+//		
+//		for(int i = 0; i < totaleInvitati; i++) {
+//			if(nomeInvitato.equalsIgnoreCase(invitati[i])) {
+//				System.out.println("Sei tra gli invitati. Puoi entrare!");
+//				flag = true;
+//			}
+//		}
+//		if (!flag) {
+//			System.out.println("Non sei tra gli invitati. Vai via!");
+//		}
+		
+		
+		// ciclo while
+		
+		boolean flag = false;
+		int counter = 0;
+		
+		while (flag == false && counter < invitati.length) {
+			if(nomeInvitato.equalsIgnoreCase(invitati[counter])) {
 				flag = true;
+				System.out.println("Sei tra gli invitati. Puoi entrare!");
+			} else {
+				counter++;
 			}
 		}
 		if (!flag) {
 			System.out.println("Non sei tra gli invitati. Vai via!");
 		}
+		
 		scan.close();
-
 	}
 
 }
