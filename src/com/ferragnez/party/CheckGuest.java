@@ -29,6 +29,24 @@ public class CheckGuest {
 		invitati[9] = "Martina Maccherone";
 		invitati[10] = "Rachel Zeilic";
 		
+		// chiedo ad utente di inserire il suo nome
+		String nomeInvitato;
+		System.out.println("Inserisci il tuo nome: ");
+		nomeInvitato = scan.nextLine();
+		
+		// verifico se utente è tra gli invitati
+		int totaleInvitati = invitati.length;
+		boolean flag = false;
+		
+		for(int i = 0; i < totaleInvitati; i++) {
+			if(nomeInvitato.equalsIgnoreCase(invitati[i])) {
+				System.out.println("Sei tra gli invitati. Puoi entrare!");
+				flag = true;
+			}
+		}
+		if (!flag) {
+			System.out.println("Non sei tra gli invitati. Vai via!");
+		}
 		scan.close();
 		
 	}
